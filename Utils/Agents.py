@@ -23,6 +23,7 @@ class Agent:
                 Psychologist Report: {self.extra_info.get('psychologist_report', '')}
                 Pulmonologist Report: {self.extra_info.get('pulmonologist_report', '')}
             """
+            return PromptTemplate.from_template(template)
         else:
             templates = {
                 "Cardiologist": """
@@ -50,8 +51,8 @@ class Agent:
                     Patient's Report: {medical_report}
                 """
             }
-        templates = templates[self.role]
-        return PromptTemplate.from_template(templates)
+            templates = templates[self.role]
+            return PromptTemplate.from_template(templates)
     
     def run(self):
         print(f"{self.role} is running...")
