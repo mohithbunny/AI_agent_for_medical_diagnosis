@@ -5,5 +5,7 @@ langchain-experimental
 python-dotenv
 langchain_ollama
 reportlab
-langchain_core
 langchain_groq
+langchain-core
+langchain-groq
+
