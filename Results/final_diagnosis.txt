@@ -1,10 +1,7 @@
 ### Final Diagnosis:
 
-- **Panic Disorder/Anxiety-Related Episodes:**
-  - All three reports highlight symptoms consistent with panic attacks, such as intense chest pain, palpitations, shortness of breath, dizziness, sweating, and a feeling of impending doom. The patient's history of anxiety and the normal cardiac evaluations further support this diagnosis.
+After reviewing the medical reports from the Cardiologist, Psychologist, and Pulmonologist, our multidisciplinary team has identified the following 3 possible health issues of the patient:
 
-- **Gastroesophageal Reflux Disease (GERD):**
-  - Both the cardiologist and pulmonologist reports suggest GERD as a potential cause of the patient's symptoms, including chest pain and respiratory issues. GERD can mimic cardiac symptoms and exacerbate respiratory symptoms due to acid reflux irritating the airways.
-
-- **Anxiety-Induced Hyperventilation:**
-  - The pulmonologist report points to anxiety-induced hyperventilation as a possible cause of the patient's shortness of breath and chest discomfort during panic attacks. This aligns with the patient's history of anxiety and the nature of his symptoms.
+* **Anxiety Disorder with Panic Attacks**: The patient's symptoms of chest pain, heart palpitations, and shortness of breath are consistent with panic attacks, and their history of anxiety disorder suggests that this may be a contributing factor to their symptoms. (Reason: Consistency of symptoms with anxiety disorder, history of anxiety diagnosis, and potential exacerbation of anxiety symptoms.)
+* **Gastroesophageal Reflux Disease (GERD) with Respiratory Complications**: The patient's symptoms of chest pain and shortness of breath may be related to GERD, which can cause respiratory symptoms such as coughing or wheezing. (Reason: GERD as a possible cause of chest pain and shortness of breath, and potential respiratory complications.)
+* **Undiagnosed Cardiac Condition or Arrhythmia**: Despite normal ECG, blood tests, and echocardiogram, there may be an underlying cardiac condition or arrhythmia that is not yet apparent, such as a subtle arrhythmia or structural abnormality. (Reason: Possibility of an underlying cardiac condition or arrhythmia not yet diagnosed, and need for further evaluation with stress test, event monitor, and cardiac MRI.)

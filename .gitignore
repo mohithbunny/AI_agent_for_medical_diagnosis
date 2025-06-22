@@ -1,0 +1,6 @@
+# Ignore a file
+secrets.env
+
+# Ignore a folder
+__pycache__/
+venv/
