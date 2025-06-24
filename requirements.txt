@@ -1,3 +1,4 @@
+langchain_core>=0.1.0
 langchain
 langchain-community 
 langchain-openai
@@ -6,6 +7,5 @@ python-dotenv
 langchain_ollama
 reportlab
 langchain[all]
-langchain_core>=0.1.0
 langchain-groq
 
