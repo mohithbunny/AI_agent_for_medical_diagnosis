@@ -1,0 +1,19 @@
+name: medical-diagnosis-agent
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - langchain-core>=0.1.0
+      - langchain>=0.2.3
+      - langchain-openai>=0.1.8
+      - langchain-community
+      - langchain-experimental
+      - langchain-groq
+      - langchain_ollama
+      - streamlit>=1.35.0
+      - python-dotenv
+      - reportlab
