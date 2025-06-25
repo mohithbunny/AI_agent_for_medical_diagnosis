@@ -7,13 +7,12 @@ dependencies:
   - python=3.11
   - pip
   - pip:
-      - langchain-core>=0.1.0
-      - langchain>=0.2.3
-      - langchain-openai>=0.1.8
+      - langchain-core
+      - langchain
       - langchain-community
       - langchain-experimental
       - langchain-groq
       - langchain_ollama
-      - streamlit>=1.35.0
+      - streamlit
       - python-dotenv
       - reportlab
