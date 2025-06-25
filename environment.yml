@@ -7,12 +7,12 @@ dependencies:
   - python=3.11
   - pip
   - pip:
-      - langchain-core
-      - langchain
-      - langchain-community
-      - langchain-experimental
-      - langchain-groq
-      - langchain_ollama
-      - streamlit
+      - langchain-core==0.3.65
+      - langchain==0.3.25
+      - langchain-community==0.3.25
+      - langchain-experimental==0.3.4
+      - langchain-groq==0.3.2
+      - langchain_ollama==0.3.3  # fixed spacing issue
+      - streamlit==1.46.0
       - python-dotenv
-      - reportlab
+      - reportlab==4.4.1
