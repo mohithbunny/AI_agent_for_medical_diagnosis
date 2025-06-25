@@ -18,7 +18,7 @@ if uploaded_file:
         text = "\n\n".join(page.extract_text() for page in reader.pages)
     
     st.subheader("Report Preview")
-    st.text_area("", text, height=200)
+    st.text_area("Enter medical notes below:", text, height=200)
 
     if st.button("🧠 Run Diagnostic Agents"):
         with st.spinner("Analyzing report with agents..."):
