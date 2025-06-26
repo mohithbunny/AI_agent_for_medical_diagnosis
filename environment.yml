@@ -7,7 +7,7 @@ dependencies:
   - python=3.11
   - pip
   - pip:
-      - langchain-core==0.3.65
+      - langchain-core>=0.3.66
       - langchain==0.3.25
       - langchain-community==0.3.25
       - langchain-experimental==0.3.4
