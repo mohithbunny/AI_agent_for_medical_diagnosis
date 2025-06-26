@@ -1,10 +1,10 @@
 langchain >= 0.2.3
-langchain-openai >= 0.1.8
 streamlit >= 1.35.0
-langchain-core>=0.1.0
-langchain-community
 langchain-experimental
 python-dotenv
 langchain_ollama
 reportlab
-langchain-groq
+langchain-core==0.3.66
+langchain-openai==0.3.25
+langchain-community==0.3.26
+langchain-groq==0.3.4
