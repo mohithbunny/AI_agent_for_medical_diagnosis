@@ -7,7 +7,16 @@ from Utils.Agents import Cardiologist, Psychologist, Pulmonologist, Multidiscipl
 
 import json, os
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import sys
+print("Python executable:", sys.executable)
+print("sys.path:", sys.path)
 
+try:
+    import langchain_core
+    print("LangChain Core loaded OK.")
+except ModuleNotFoundError as e:
+    print("LangChain Core import failed:", e)
+    
 # Loading API key from a dotenv file.
 
 # read the medical report
