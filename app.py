@@ -2,6 +2,8 @@ import streamlit as st
 import subprocess
 import json
 import os
+import pip
+pip.main(['install', '--force-reinstall', 'langchain-core==0.3.65'])
 st.set_page_config(page_title="Medical AI Agents", layout="centered")
 st.title("🩺 AI Medical Diagnostic Agents")
 st.write("Upload a medical report in plain text (or PDF), run the agents, and view combined analysis.")
