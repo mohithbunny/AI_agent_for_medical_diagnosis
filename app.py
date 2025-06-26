@@ -4,7 +4,15 @@ import json
 import os
 import pip
 import subprocess, sys
- 
+import sys
+print("Python executable:", sys.executable)
+print("sys.path:", sys.path)
+
+try:
+    import langchain_core
+    print("LangChain Core loaded OK.")
+except ModuleNotFoundError as e:
+    print("LangChain Core import failed:", e)
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", "--no-cache-dir", package])
  
