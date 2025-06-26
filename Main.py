@@ -1,12 +1,5 @@
 # Importing the needed modules 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-from langchain_core.prompts import PromptTemplate
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from Utils.Agents import Cardiologist, Psychologist, Pulmonologist, MultidisciplinaryTeam
-
-import json, os
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import sys
 print("Python executable:", sys.executable)
 print("sys.path:", sys.path)
@@ -16,6 +9,13 @@ try:
     print("LangChain Core loaded OK.")
 except ModuleNotFoundError as e:
     print("LangChain Core import failed:", e)
+from langchain_core.prompts import PromptTemplate
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from Utils.Agents import Cardiologist, Psychologist, Pulmonologist, MultidisciplinaryTeam
+
+import json, os
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     
 # Loading API key from a dotenv file.
 
