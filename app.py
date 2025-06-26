@@ -3,6 +3,12 @@ import subprocess
 import json
 import os
 import pip
+import subprocess, sys
+ 
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--no-cache-dir", package])
+ 
+install("langchain-core==0.3.65")
 pip.main(['install', '--force-reinstall', 'langchain-core==0.3.65'])
 st.set_page_config(page_title="Medical AI Agents", layout="centered")
 st.title("🩺 AI Medical Diagnostic Agents")
