@@ -1,72 +1,45 @@
-# Importing the needed modules 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-from langchain_core.prompts import PromptTemplate
+# Main.py
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from Utils.Agents import Cardiologist, Psychologist, Pulmonologist, MultidisciplinaryTeam
+import os, json
 
-import json, os
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+def run_agents(medical_report: str):
+    """Takes a medical report string and returns analysis results as a dict."""
 
-    
-# Loading API key from a dotenv file.
+    agents = {
+        "Cardiologist": Cardiologist(medical_report),
+        "Psychologist": Psychologist(medical_report),
+        "Pulmonologist": Pulmonologist(medical_report),
+    }
 
-# read the medical report
-with open("./Medical Reports/Medical Rerort - Michael Johnson - Panic Attack Disorder.txt", "r") as file:
-    medical_report = file.read()
-    #print("Medical Report Loaded Successfully")
-   
-agents = {
-    "Cardiologist": Cardiologist(medical_report),
-    "Psychologist": Psychologist(medical_report),
-    "Pulmonologist": Pulmonologist(medical_report)
-}
+    responses = {}
+    with ThreadPoolExecutor() as executor:
+        futures = {executor.submit(agent.run): name for name, agent in agents.items()}
+        for future in as_completed(futures):
+            role = futures[future]
+            responses[role] = future.result()
 
-# Function to run each agent and get their response
-def get_response(agent_name, agent):
-    response = agent.run()
-    return agent_name, response
+    team_agent = MultidisciplinaryTeam(
+        cardiologist_report=responses["Cardiologist"],
+        psychologist_report=responses["Psychologist"],
+        pulmonologist_report=responses["Pulmonologist"],
+    )
 
-# Run the agents concurrently and collect responses
-responses = {}
-with ThreadPoolExecutor() as executor:
-    futures = {executor.submit(get_response, name, agent): name for name, agent in agents.items()}
-    #print(futures)
-    for future in as_completed(futures):
-        #print("hello")
-        agent_name, response = future.result()
-        responses[agent_name] = response
-        #print(responses[agent_name])
+    final_diagnosis = team_agent.run()
+    final_diagnosis_text = "### Final Diagnosis:\n\n" + final_diagnosis
 
-team_agent = MultidisciplinaryTeam(
-    cardiologist_report=responses["Cardiologist"],
-    psychologist_report=responses["Psychologist"],
-    pulmonologist_report=responses["Pulmonologist"]
-)
-
-# Run the MultidisciplinaryTeam agent to generate the final diagnosis
-final_diagnosis = team_agent.run()
-final_diagnosis_text =f"### Final Diagnosis:\n\n{final_diagnosis}"
-
-txt_output_path = "results/final_diagnosis.txt"
-
-# Ensure the directory exists
-# os.makedirs(os.path.dirname(txt_output_path), exist_ok=True)
-
-# # Write the final diagnosis to the text file
-# with open(txt_output_path, "w") as txt_file:
-#     txt_file.write(final_diagnosis_text)
-
-#print(f"Final diagnosis has been saved to {txt_output_path}")
-import json
-combined = {
-  "cardiologist": responses["Cardiologist"],
-  "pulmonologist": responses["Pulmonologist"],
-  "psychologist":  responses["Psychologist"],
-  "summary": final_diagnosis_text
-}
-print(json.dumps(combined))
+    return {
+        "cardiologist": responses["Cardiologist"],
+        "psychologist": responses["Psychologist"],
+        "pulmonologist": responses["Pulmonologist"],
+        "summary": final_diagnosis_text,
+    }
 
 
-
+# Allow running standalone for testing
+if __name__ == "__main__":
+    report_path = r"Medical Reports\Medical Rerort - Michael Johnson - Panic Attack Disorder.txt"
+    with open(report_path, "r") as f:
+        report_text = f.read()
+    results = run_agents(report_text)
+    print(json.dumps(results))
