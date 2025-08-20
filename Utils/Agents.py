@@ -14,7 +14,7 @@ class Agent:
         temperature=0,
         model_name="llama3-70b-8192",  # or "llama3-70b-8192", etc.
         #groq_api_key="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"  # Can also be set via env var
-        groq_api_key="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"
+        groq_api_key="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"
         )
 
 
