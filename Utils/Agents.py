@@ -1,6 +1,8 @@
 from langchain_core.prompts import PromptTemplate
 from langchain_groq import ChatGroq
-
+import os
+import streamlit as st
+groq_api_key1 = st.secrets["groq_api_key"]
 
 class Agent:
     def __init__(self, medical_report=None, role=None, extra_info=None):
@@ -14,7 +16,7 @@ class Agent:
         temperature=0,
         model_name="llama3-70b-8192",  # or "llama3-70b-8192", etc.
         #groq_api_key="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"  # Can also be set via env var
-        groq_api_key="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"
+        groq_api_key=groq_api_key1
         )
 
 
