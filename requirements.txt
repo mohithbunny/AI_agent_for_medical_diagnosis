@@ -5,3 +5,6 @@ langchain-experimental
 python-dotenv
 langchain_ollama
 reportlab
+PyPDF2
+langchain-core
+langchain-groq
