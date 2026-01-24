@@ -44,7 +44,10 @@ if uploaded_file:
                 capture_output=True, text=True
             )
         if proc.returncode != 0:
-            st.error("Agent execution failed:\n" + proc.stderr)
+            st.error(
+                "Agent execution failed:\n" +
+                (proc.stderr if proc.stderr else "No error output from Main.py")
+            )
         else:
             try:
                 print("printing")
