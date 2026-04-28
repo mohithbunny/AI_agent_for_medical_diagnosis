@@ -1,1 +1,1 @@
-![Rolex Careline Architecture Diagram](architecture (3).png)
+![Rolex Careline Architecture Diagram](/architecture (3).png)
